@@ -1,0 +1,19 @@
+GET http://127.0.0.1:8000/items/?q=fixedquery HTTP/1.1
+
+###
+
+GET http://127.0.0.1:8000/multi-items/?q=Foo&q=Bar HTTP/1.1
+
+###
+GET http://127.0.0.1:8000/multi-default-items/ HTTP/1.1
+
+###
+GET http://127.0.0.1:8000/doc-items/ HTTP/1.1
+
+###
+GET http://127.0.0.1:8000/items-alias/?item-query=something HTTP/1.1
+
+###
+GET http://127.0.0.1:8000/deprecated-items/?item-query=fixedquery HTTP/1.1
+
+###

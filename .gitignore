@@ -1,0 +1,5 @@
+.mypy_cache
+.pytest_cache
+.vscode/
+Pipfile.lock
+sql_app.db

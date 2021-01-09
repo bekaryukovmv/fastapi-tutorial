@@ -1,0 +1,28 @@
+# Получение записи
+GET http://127.0.0.1:8000/items/baz HTTP/1.1
+content-type: application/json
+
+###
+
+
+# Обновление записи
+PUT http://127.0.0.1:8000/items/bar HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Barz",
+    "price": 3,
+    "description": null
+}
+
+###
+
+# Частичное обновление
+PATCH http://127.0.0.1:8000/items/baz HTTP/1.1
+content-type: application/json
+
+{
+    "description": "New description"
+}
+
+###

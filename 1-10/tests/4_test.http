@@ -1,0 +1,30 @@
+POST http://127.0.0.1:8000/items/ HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Foo",
+    "price": 45.2
+}
+
+###
+PUT http://127.0.0.1:8000/items/1/ HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Foo",
+    "description": "An optional description",
+    "price": 45.2,
+    "tax": 3.5
+}
+
+###
+PUT http://127.0.0.1:8000/test-items/1/?q=test HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Bar",
+    "description": "Description",
+    "price": 44.0,
+    "tax": 3.9
+}
+###

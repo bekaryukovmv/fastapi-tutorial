@@ -1,0 +1,53 @@
+# Запрос проходит
+GET http://127.0.0.1:8000/items/foo HTTP/1.1
+content-type: application/json
+
+###
+
+# Вызывает исключение
+GET http://127.0.0.1:8000/items/bar HTTP/1.1
+content-type: application/json
+
+###
+# Запрос проходит
+GET http://127.0.0.1:8000/unicorns/spam HTTP/1.1
+content-type: application/json
+
+###
+
+# Вызывает исключение
+GET http://127.0.0.1:8000/unicorns/yolo HTTP/1.1
+content-type: application/json
+
+###
+# Запрос проходит
+GET http://127.0.0.1:8000/new-items/1 HTTP/1.1
+content-type: application/json
+
+###
+
+# Вызывает исключение
+GET http://127.0.0.1:8000/new-items/3 HTTP/1.1
+content-type: application/json
+
+###
+# Вызывает исключение валидации
+GET http://127.0.0.1:8000/new-items/foo HTTP/1.1
+content-type: application/json
+
+###
+# Вызывает исключение валидации body
+POST http://127.0.0.1:8000/body-items/ HTTP/1.1
+content-type: application/json
+
+{
+    "title": "towel",
+    "size": "XL"
+}
+
+###
+# Уведомляет об ошибке в консоль и вызывает исключение повторно
+GET http://127.0.0.1:8000/custom-exception-items/3 HTTP/1.1
+content-type: application/json
+
+###

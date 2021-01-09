@@ -1,0 +1,41 @@
+PUT http://127.0.0.1:8000/items/1/ HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Foo",
+    "description": "The pretender",
+    "price": 42.0,
+    "tax": 3.2
+}
+
+###
+PUT http://127.0.0.1:8000/multi-items/1/ HTTP/1.1
+content-type: application/json
+
+{
+    "item": {
+        "name": "Foo",
+        "description": "The pretender",
+        "price": 42.0,
+        "tax": 3.2
+    },
+    "user": {
+        "username": "dave",
+        "full_name": "Dave Grohl"
+    },
+    "importance": 5
+}
+
+###
+PUT http://127.0.0.1:8000/key-items/1/ HTTP/1.1
+content-type: application/json
+
+{
+    "item": {"name": "Foo",
+        "description": "The pretender",
+        "price": 42.0,
+        "tax": 3.2
+    }
+}
+
+###

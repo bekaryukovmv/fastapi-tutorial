@@ -1,0 +1,80 @@
+PUT http://127.0.0.1:8000/items/1/ HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Foo",
+    "description": "The pretender",
+    "price": 42.0,
+    "tax": 3.2,
+    "tags": [
+        "rock",
+        "metal",
+        "bar"
+    ],
+    "images": [
+        {
+            "url": "http://example.com/baz.jpg",
+            "name": "The Foo live"
+        },
+        {
+            "url": "http://example.com/dave.jpg",
+            "name": "The Baz"
+        }
+    ]
+}
+
+###
+POST http://127.0.0.1:8000/offers/ HTTP/1.1
+content-type: application/json
+
+{
+    "name": "test",
+    "description": "Offer desc",
+    "price": 0.15,
+    "items": [{
+            "name": "Foo",
+            "description": "The pretender",
+            "price": 42.0,
+            "tax": 3.2,
+            "tags": [
+                "rock",
+                "metal",
+                "bar"
+            ],
+            "images": [
+                {
+                    "url": "http://example.com/baz.jpg",
+                    "name": "The Foo live"
+                },
+                {
+                    "url": "http://example.com/dave.jpg",
+                    "name": "The Baz"
+                }
+            ]
+    }]
+}
+###
+POST http://127.0.0.1:8000/images/multiple/ HTTP/1.1
+content-type: application/json
+
+
+[
+    {
+        "url": "http://example.com/baz.jpg",
+        "name": "The Foo live"
+    },
+    {
+        "url": "http://example.com/dave.jpg",
+        "name": "The Baz"
+    }
+]
+
+###
+POST http://127.0.0.1:8000/index-weights/ HTTP/1.1
+content-type: application/json
+
+{
+    "1": 9.8
+}
+
+###
